@@ -29,6 +29,14 @@ i[class^=layui-icon-] {
   color: white !important;
 }
 
+.pear-nav-mini .pear-nav-tree .layui-nav-child dd a i.layui-icon {
+  margin-left: 0px;
+}
+.pear-nav-mini .pear-nav-tree .layui-nav-more {
+  top: 18px !important;
+  right: 8px;
+}
+
 .layui-tab-brief > .layui-tab-title .layui-this {
   color: var(--global-primary-color);
 }
@@ -121,6 +129,19 @@ i[class^=layui-icon-] {
 .pear-admin-dark .layui-form .layui-iconpicker .layui-iconpicker-icon {
   background-color: rgba(0, 0, 0, 0.85);
   color: white;
+}
+
+.pear-admin .layui-logo .logo {
+  display: inline-block;
+}
+
+a {
+  color: var(--global-primary-color);
+  cursor: pointer;
+}
+a:hover {
+  color: var(--global-primary-color);
+  text-decoration: underline;
 }
 
 *[permission] {
