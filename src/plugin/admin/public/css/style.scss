@@ -47,6 +47,27 @@ i[class^="layui-icon-"] {
   }
 }
 
+.pear-nav-mini {
+  .pear-nav-tree {
+    .layui-nav-child {
+      dd {
+        a {
+          i {
+            &.layui-icon {
+              margin-left: 0px;
+            }
+          }
+        }
+      }
+    }
+
+    .layui-nav-more {
+      top: 18px !important;
+      right: 8px;
+    }
+  }
+}
+
 .layui-tab-brief {
   > {
     .layui-tab-title {
@@ -174,6 +195,24 @@ i[class^="layui-icon-"] {
         color: white;
       }
     }
+  }
+}
+
+.pear-admin {
+  .layui-logo {
+    .logo {
+      display: inline-block;
+    }
+  }
+}
+
+a {
+  color: var(--global-primary-color);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--global-primary-color);
+    text-decoration: underline;
   }
 }
 

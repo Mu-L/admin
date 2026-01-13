@@ -19,6 +19,15 @@ use plugin\admin\app\model\Base;
  */
 class Rule extends Base
 {
+    public const TYPE_DIR = 0;
+    public const TYPE_MENU = 1;
+    public const TYPE_PERMISSION = 2;
+
+    public const OPEN_TYPE_IFRAME = '_iframe';
+    public const OPEN_TYPE_BLANK = '_blank';
+    public const OPEN_TYPE_LAYER = '_layer';
+    public const OPEN_TYPE_COMPONENT = '_component';
+
     /**
      * The table associated with the model.
      *

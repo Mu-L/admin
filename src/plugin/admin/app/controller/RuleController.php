@@ -91,7 +91,7 @@ class RuleController extends Crud
         }
         $this->removeNotContain($tree_items, 'type', $types);
         $menus = $this->empty_filter(Tree::arrayValues($tree_items));
-        if ($request->get('original')){
+        if ($request->get('original') || $request->get('fresh')){
             return json($menus);
         }
         return $this->json(0, 'ok', $menus);

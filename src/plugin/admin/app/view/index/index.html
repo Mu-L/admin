@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>主页</title>
+        <title><?= $site_title ?></title>
         <link rel="stylesheet" href="/app/admin/css/style.css" />
         <link rel="stylesheet" href="/app/admin/css/index.css" />
     </head>
@@ -133,6 +133,17 @@
 
                 // 消息点击回调
                 //admin.message(function(id, title, context, form) {});
+
+                var titleHandler = function () {
+                    var current_title = document.title;
+                    var site_title = document.querySelector('.layui-logo .title').innerText
+                    var tab_title = document.querySelector('.layui-tab-title .layui-this .title')?.innerText || '仪表盘'
+                    if (`${tab_title} - ${site_title}` !== current_title) {
+                        document.title = `${tab_title} - ${site_title}`
+                    }
+                    requestAnimationFrame(titleHandler)
+                }
+                requestAnimationFrame(titleHandler)
             });
 
         </script>

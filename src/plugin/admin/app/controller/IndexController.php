@@ -40,15 +40,17 @@ class IndexController
             return raw_view('index/install');
         }
         $admin = admin();
+        $name = 'system_config';
+        $config = Option::where('name', $name)->value('value');
+        $config = json_decode($config, true);
+        $title = $config['logo']['title'] ?? 'webman admin';
+        $logo = $config['logo']['image'] ?? '/app/admin/admin/images/logo.png';
         if (!$admin) {
-            $name = 'system_config';
-            $config = Option::where('name', $name)->value('value');
-            $config = json_decode($config, true);
-            $title = $config['logo']['title'] ?? 'webman admin';
-            $logo = $config['logo']['image'] ?? '/app/admin/admin/images/logo.png';
             return raw_view('account/login',['logo'=>$logo,'title'=>$title]);
         }
-        return raw_view('index/index');
+        return raw_view('index/index',[
+            'site_title' => $title,
+        ]);
     }
 
     /**
